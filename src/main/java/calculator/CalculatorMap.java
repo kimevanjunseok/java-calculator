@@ -16,16 +16,16 @@ package calculator;
 import java.util.HashMap;
 
 public class CalculatorMap {
-    private static HashMap<String, Operators> operator = new HashMap<>();
+    private static HashMap<String, Operator> operators = new HashMap<>();
 
     {
-        operator.put("+", new Plus());
-        operator.put("-", new Minus());
-        operator.put("*", new Multiply());
-        operator.put("/", new Divide());
+        operators.put("+", new Plus());
+        operators.put("-", new Minus());
+        operators.put("*", new Multiply());
+        operators.put("/", new Divide());
     }
 
-    public double calculate(String op, double x, double y) {
-        return operator.get(op).Operate(x, y);
+    public static double calculate(String op, double x, double y) {
+        return operators.get(op).Operate(x, y);
     }
 }

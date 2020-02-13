@@ -13,6 +13,6 @@
 
 package calculator;
 
-public interface Operators {
+public interface Operator {
     double Operate(double x, double y);
 }

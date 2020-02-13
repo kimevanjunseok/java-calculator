@@ -13,7 +13,7 @@
 
 package calculator;
 
-public class Plus implements Operators {
+public class Plus implements Operator {
     public double Operate(double x, double y) {
         return x + y;
     }

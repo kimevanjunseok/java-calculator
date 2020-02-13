@@ -28,7 +28,7 @@ public class Formula {
     private String[] toFormula(String[] input) {
         try {
             if (input.length < 3 || input.length % 2 == 0) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("잘못된 계산식 입니다. 다시 입력해 주세요.");
             }
             for (int i = 0; i < input.length; i++) {
                 if (i % 2 == 0) {
@@ -40,15 +40,15 @@ public class Formula {
             }
             return input;
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("잘못된 계산식 입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(e.getMessage());
         }
     }
 
-    public List<Number> getNumberList() {
+    public List<Number> getNumbers() {
         return numbers;
     }
 
-    public List<Operator> getOperatorList() {
+    public List<Operator> getOperators() {
         return operators;
     }
 }

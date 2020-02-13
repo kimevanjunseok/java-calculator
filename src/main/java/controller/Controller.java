@@ -42,14 +42,12 @@ public class Controller {
     }
 
     private double calculate(Formula stringInput) {
-        List<Number> numbers = stringInput.getNumberList();
-        List<Operator> operators = stringInput.getOperatorList();
+        List<Number> numbers = stringInput.getNumbers();
+        List<Operator> operators = stringInput.getOperators();
         double sum = numbers.get(0).getNumber();
 
-        CalculatorMap op = new CalculatorMap();
-
         for (int i = 0; i < operators.size(); i++) {
-            sum = op.calculate(operators.get(i).getOperator(), sum, numbers.get(i + 1).getNumber());
+            sum = CalculatorMap.calculate(operators.get(i).getOperator(), sum, numbers.get(i + 1).getNumber());
         }
 
         return sum;
